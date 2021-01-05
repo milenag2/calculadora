@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Calculadora</title>
+    </head>
+    <body>
+        <h1>Calculadora</h1>
+        <h3><i>Converte para horas, minutos e segundos</i></h3>
+        <p>Horas: <input type="text" id="h"></p>
+        <p>Minutos: <input type="text" id="min"></p>
+        <p>Segundos: <input type="text" id="s"></p>
+        <p><button onclick="converte()">Converter</button></p>
+        <p>Esse tempo convertido totalmente em:</p>
+        <p>Horas: <output type="text"><span id="rh"> </span></output></p>
+        <p>Minutos: <output id="rmin"></output></p>
+        <p>Segundos: <output><span id="rs"> </span></output></p>
+    </body>
+    <script type="text/javascript">
+        function converte()
+        {
+            let h =  document.getElementById("h");
+            let min = document.getElementById("min");
+            let s = document.getElementById("s");
+            let rh = document.getElementById("rh");
+            let rmin = document.getElementById("rmin");
+            let rs = document.getElementById("rs");
+            let vh = parseInt(h.value);
+            let vmin = parseInt(min.value);
+            let vs = parseInt(s.value);
+            let hr = vh + (vmin/60) + (vs/3600);
+            let mr = vh*60 + vmin + vs/60;
+            let sr = vh*3600 + vmin*60 + vs;
+            rh.textContent = hr;
+            rmin.textContent = mr;
+            rs.textContent = sr;
+        }
+    </script>
+</html>
